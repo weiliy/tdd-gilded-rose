@@ -22,13 +22,16 @@ public class Item {
         return quality;
     }
 
-    public void pass(int days) {
-        sellIn -= days;
-
+    protected void updateQuality(int days) {
         if (sellIn < 0) {
             quality -= days * 2;
         } else {
             quality -= days;
         }
+    }
+
+    public void pass(int days) {
+        sellIn -= days;
+        updateQuality(days);
     }
 }

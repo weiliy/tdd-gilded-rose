@@ -6,9 +6,7 @@ public class AgedBrie extends Item {
     }
 
     @Override
-    public void pass(int days) {
-        int current = quality;
-        super.pass(days);
-        quality= current + days;
+    protected void updateQuality(int days) {
+        quality += days;
     }
 }
