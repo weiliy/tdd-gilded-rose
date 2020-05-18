@@ -4,9 +4,14 @@ public class Item {
     private int sellIn;
     private int quality;
 
-    public Item(int sellIn, int quality) {
+    public Item(int sellIn, int quality) throws Exception {
+        if (quality > 50) {
+            throw new Exception("over max quality");
+        }
+
         this.sellIn = sellIn;
         this.quality = quality;
+
     }
 
     public int getSellIn() {
