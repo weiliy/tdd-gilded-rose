@@ -59,13 +59,13 @@ THEN: Sellin为10, Quality为30
 ```text
 GIVEN: 萨弗拉斯, Sellin为1, Quality为30
 WHEN: 经过1天
-THEN: Selling为10, Quality为30
+THEN: Selling为1, Quality为30
 ```
 
 ```text
 GIVEN: 萨弗拉斯, Sellin为1, Quality为30
 WHEN: 经过2天
-THEN: Selling为10, Quality为30
+THEN: Selling为1, Quality为30
 ```
 
 **陈年干酪**
