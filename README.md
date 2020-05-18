@@ -27,5 +27,116 @@
 	- 演出前5天，价值每天上升3点
 	- 一旦过了演出日，价值就马上变成0
 
+## Tasking
+
+**常规商品**
+```text
+GIVEN：普通商品, Sellin 10，Quality 10
+WHEN: 经过1天
+THEN: Sellin为9，Quality 为 9
+```
 
 
+```text
+GIVEN：普通商品, Sellin 0，Quality 10
+WHEN: 经过1天
+THEN: Sellin为-1，Quality 为 8
+```
+
+```text
+GIVEN：普通商品, Sellin 10，Quality 60
+WHEN: 创建商品
+THEN: 抛出异常"over max quality"
+```
+
+**萨弗拉斯**
+```text
+GIVEN: 萨弗拉斯, Sellin为10, Quality为30
+WHEN: 经过1天
+THEN: Sellin为10, Quality为30
+```
+
+```text
+GIVEN: 萨弗拉斯, Sellin为1, Quality为30
+WHEN: 经过1天
+THEN: Selling为10, Quality为30
+```
+
+```text
+GIVEN: 萨弗拉斯, Sellin为1, Quality为30
+WHEN: 经过2天
+THEN: Selling为10, Quality为30
+```
+
+**陈年干酪**
+```text
+GIVEN: 陈年奶酪，Selling为11，Quality 为30
+WEHN: 经过1天
+THEN: Selling为10，Qualitry为31
+```
+
+```text
+GIVEN: 陈年奶酪，Selling为10，Quality 为30
+WEHN: 经过1天
+THEN: Selling为9，Qualitry为32
+```
+
+```text
+GIVEN: 陈年奶酪，Selling为6，Quality 为30
+WEHN: 经过1天
+THEN: Selling为5，Qualitry为32
+```
+
+```text
+GIVEN: 陈年奶酪，Selling为5，Quality 为30
+WEHN: 经过1天
+THEN: Selling为4，Qualitry为33
+```
+
+```text
+GIVEN: 陈年奶酪，Selling为1，Quality 为30
+WEHN: 经过1天
+THEN: Selling为0，Qualitry为33
+```
+
+```text
+GIVEN: 陈年奶酪，Selling为0，Quality 为30
+WEHN: 经过1天
+THEN: Selling为-1，Qualitry为0
+```
+**后台门票**
+```text
+GIVEN: 后台门票，Selling为11，Quality 为30
+WEHN: 经过1天
+THEN: Selling为10，Qualitry为31
+```
+
+```text
+GIVEN: 后台门票，Selling为10，Quality 为30
+WEHN: 经过1天
+THEN: Selling为9，Qualitry为32
+```
+
+```text
+GIVEN: 后台门票，Selling为6，Quality 为30
+WEHN: 经过1天
+THEN: Selling为5，Qualitry为32
+```
+
+```text
+GIVEN: 后台门票，Selling为5，Quality 为30
+WEHN: 经过1天
+THEN: Selling为4，Qualitry为33
+```
+
+```text
+GIVEN: 后台门票，Selling为1，Quality 为30
+WEHN: 经过1天
+THEN: Selling为0，Qualitry为33
+```
+
+```text
+GIVEN: 后台门票，Selling为0，Quality 为30
+WEHN: 经过1天
+THEN: Selling为-1，Qualitry为0
+```
