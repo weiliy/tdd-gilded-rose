@@ -7,7 +7,9 @@ public class AgedBrie extends Item {
 
     @Override
     protected void updateQuality(int days) {
-        if (sellIn < 5) {
+        if (sellIn < 0 ) {
+            quality = 0;
+        } else if (sellIn < 5) {
             quality += days * 3;
         } else if (sellIn < 10) {
             quality += days * 2;
