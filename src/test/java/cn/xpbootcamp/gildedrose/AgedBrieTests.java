@@ -40,4 +40,13 @@ public class AgedBrieTests {
         assertEquals(4, item.getSellIn());
         assertEquals(33, item.getQuality());
     }
+
+    @Test
+    public void should_return_s1_q30_when_pass_one_day_given_s1_q30() throws Exception {
+        AgedBrie item = new AgedBrie(1, 30);
+        item.pass(1);
+
+        assertEquals(0, item.getSellIn());
+        assertEquals(33, item.getQuality());
+    }
 }
