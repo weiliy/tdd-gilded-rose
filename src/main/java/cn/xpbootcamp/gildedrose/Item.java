@@ -1,8 +1,8 @@
 package cn.xpbootcamp.gildedrose;
 
 public class Item {
-    private int sellIn;
-    private int quality;
+    protected int sellIn;
+    protected int quality;
 
     public Item(int sellIn, int quality) throws Exception {
         if (quality > 50) {
