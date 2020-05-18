@@ -15,4 +15,13 @@ public class ItemTests {
         assertEquals(item.getSellIn(), 9);
         assertEquals(item.getQuality(), 9);
     }
+
+    @Test
+    public void should_return_s0_q10_when_pass_one_day_given_s0_q_10() {
+        Item item = new Item(0, 10);
+        item.pass(1);
+
+        assertEquals(item.getSellIn(), -1);
+        assertEquals(item.getQuality(), 8);
+    }
 }

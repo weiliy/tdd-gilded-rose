@@ -19,6 +19,11 @@ public class Item {
 
     public void pass(int days) {
         sellIn -= days;
-        quality -= days;
+
+        if (sellIn < 0) {
+            quality -= days * 2;
+        } else {
+            quality -= days;
+        }
     }
 }
