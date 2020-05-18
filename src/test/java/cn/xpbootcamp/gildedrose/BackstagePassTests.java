@@ -1,0 +1,61 @@
+package cn.xpbootcamp.gildedrose;
+
+import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class BackstagePassTests {
+
+    @Test
+    public void should_return_s10_q32_when_pass_one_day_given_s11_q30() throws Exception {
+        BackstagePass item = new BackstagePass(11, 30);
+        item.pass(1);
+
+        assertEquals(10, item.getSellIn());
+        assertEquals(31, item.getQuality());
+    }
+
+    @Test
+    public void should_return_s9_q32_when_pass_one_day_given_s10_q30() throws Exception {
+        BackstagePass item = new BackstagePass(10, 30);
+        item.pass(1);
+
+        assertEquals(9, item.getSellIn());
+        assertEquals(32, item.getQuality());
+    }
+
+    @Test
+    public void should_return_s5_q32_when_pass_one_day_given_s6_q30() throws Exception {
+        BackstagePass item = new BackstagePass(6, 30);
+        item.pass(1);
+
+        assertEquals(5, item.getSellIn());
+        assertEquals(32, item.getQuality());
+    }
+
+    @Test
+    public void should_return_s4_q33_when_pass_one_day_given_s5_q30() throws Exception {
+        BackstagePass item = new BackstagePass(5, 30);
+        item.pass(1);
+
+        assertEquals(4, item.getSellIn());
+        assertEquals(33, item.getQuality());
+    }
+
+    @Test
+    public void should_return_s1_q30_when_pass_one_day_given_s1_q30() throws Exception {
+        BackstagePass item = new BackstagePass(1, 30);
+        item.pass(1);
+
+        assertEquals(0, item.getSellIn());
+        assertEquals(33, item.getQuality());
+    }
+
+    @Test
+    public void should_return_s_1_q30_when_pass_one_day_given_s0_q30() throws Exception {
+        BackstagePass item = new BackstagePass(0, 30);
+        item.pass(1);
+
+        assertEquals(-1, item.getSellIn());
+        assertEquals(0, item.getQuality());
+    }
+}
